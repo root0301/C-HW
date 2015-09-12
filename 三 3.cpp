@@ -1,28 +1,34 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-
+/**
+ *	定义矩阵的类 
+ */
 class martrix
 {
 	private :
 		int lines, rows;
 
 	public :
-		int **mar;
-		martrix(int l, int r) :lines(l), rows(r)
+		int **mar;														//储存数组的指针 
+		martrix(int l, int r) :lines(l), rows(r)						//矩阵有参数构造函数 
 		{
-			mar = new int*[lines];
+			/**
+ 			 *	为数组指针分配内存空间 
+ 			 */
+			mar = new int*[lines];										
 			for(int i=0; i<lines; i++)
 			{
 				mar[i] = new int[rows];
 			}
 		}
 		
-		martrix()
+		martrix()														//矩阵无参数构造函数 
 		{
 			int l, r;
 			cout<<"请输入矩阵的行数和列数：";
 			cin>>l>>r;
+			//为数组指针分配内存空间 
 			mar = new int*[l];
 			for(int i=0; i<l; i++)
 			mar[i] = new int[r];
@@ -31,8 +37,9 @@ class martrix
 			rows = r;
 		}
 		
-		martrix(martrix& M)
+		martrix(martrix& M)												//拷贝构造函数 
 		{
+			//为数组指针分配内存空间 
 			mar = new int*[M.lines];
 			for(int i=0; i<M.lines; i++)
 			{
@@ -42,10 +49,11 @@ class martrix
 			rows = M.rows;
 		}
 		
-		martrix& operator=(const martrix& m)
+		martrix& operator=(const martrix& m)							//赋值运算符=重载 
 		{
-			if(this != &m)	
+			if(this != &m)												//当心自赋值 
 			{
+				//释放原数组指针内存空间 
 				for(int i=0; i<lines; i++)
 				{
 					delete [] mar[i];
@@ -54,6 +62,7 @@ class martrix
 				
 				lines = m.lines;
 				rows = m.rows;
+				//为数组指针分配内存 
 				mar = new int*[lines];
 				for(int i=0; i<m.lines; i++)
 				{
@@ -62,9 +71,7 @@ class martrix
 			}
 		} 		
 
-		 
-		
-		void init() 
+		void init() 													//初始化数组元素	
 			{
 				int i , j;
 				cout<<"请输入矩阵元素："<<endl;
@@ -77,7 +84,7 @@ class martrix
 				}
 			}
 
-		void print()
+		void print()													//打印数组 
 		{
 			int i, j;
 			for(i=0; i<lines; i++)
@@ -90,7 +97,7 @@ class martrix
 			}
 		}
 
-		void add(martrix& rec1, martrix& rec2)
+		void add(martrix& rec1, martrix& rec2)							//数组相加 
 		{
 			int i , j;
 			for(i=0; i<lines; i++)
@@ -103,7 +110,7 @@ class martrix
 			
 		}
 
-		void sub(martrix& rec1, martrix& rec2)
+		void sub(martrix& rec1, martrix& rec2)							//数组相减 
 		{	
 			int i , j;
 			for(i=0; i<lines; i++)
@@ -116,10 +123,11 @@ class martrix
 			
 		}	
 
-		~martrix()
+		~martrix()														//析构函数 
 		{
 			cout<<""<<endl;
 			cout<<"调用析构函数"<<endl;
+			//释放数组指针内存空间 
 			for(int i=0; i<lines; i++)
 			{
 				delete [] mar[i];

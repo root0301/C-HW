@@ -1,7 +1,9 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-
+/**
+ *	初始化矩阵 
+ */
 void init(int **rec) 
 {
 	int i , j;
@@ -14,7 +16,9 @@ void init(int **rec)
 		}
 	}
 }
-
+/**
+ *	打印矩阵 
+ */
 void print(int **rec)
 {
 	int i, j;
@@ -27,7 +31,9 @@ void print(int **rec)
 		cout<<""<<endl;
 	}
 }
-
+/**
+ *	矩阵相加 
+ */
 void add(int **rec1, int **rec2, int **result)
 {
 	int i , j;
@@ -40,7 +46,9 @@ void add(int **rec1, int **rec2, int **result)
 	}			
 	print(result);
 }
-
+/**
+ *	矩阵相减 
+ */
 void sub(int **rec1, int **rec2, int **result)
 {
 	int i , j;
@@ -56,9 +64,9 @@ void sub(int **rec1, int **rec2, int **result)
 
 int main()
 {
-	int **A1, **A2, **A3;
+	int **A1, **A2, **A3;                                
 	int i;
-	//从外到里申请内存空间 
+	//从外到里申请动态内存空间 
 	A1 = new int*[4];
 	A2 = new int*[4];
 	A3 = new int*[4];
@@ -68,6 +76,7 @@ int main()
 		A2[i] = new int[5];
 		A3[i] = new int[5];
 	}
+	//申请内存结束 
 	
 	cout<<"请输入A1矩阵(4X5)："<<endl;
 	init(A1);
@@ -98,7 +107,7 @@ int main()
 	delete [] A1;
 	delete [] A2;
 	delete [] A3;
-	
+	//释放结束	
 	return 0;
 	
 		

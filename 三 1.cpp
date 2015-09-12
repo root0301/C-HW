@@ -1,7 +1,9 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-
+/**
+ *	≥ı ºªØæÿ’Û 
+ */
 void init(int rec[4][5]) 
 {
 	int i , j;
@@ -14,7 +16,9 @@ void init(int rec[4][5])
 		}
 	}
 }
-
+/**
+ *	¥Ú”°æÿ’Û 
+ */
 void print(int rec[4][5])
 {
 	int i, j;
@@ -27,7 +31,9 @@ void print(int rec[4][5])
 		cout<<""<<endl;
 	}
 }
-
+/**
+ *	æÿ’Ûœ‡º” 
+ */
 void add(int rec1[4][5], int rec2[4][5], int result[4][5])
 {
 	int i , j;
@@ -40,7 +46,9 @@ void add(int rec1[4][5], int rec2[4][5], int result[4][5])
 	}			
 	print(result);
 }
-
+/**
+ *	æÿ’Ûœ‡ºı 
+ */
 void sub(int rec1[4][5], int rec2[4][5], int result[4][5])
 {
 	int i , j;
@@ -56,7 +64,7 @@ void sub(int rec1[4][5], int rec2[4][5], int result[4][5])
 
 int main()
 {
-	int A1[4][5], A2[4][5], A3[4][5];
+	int A1[4][5], A2[4][5], A3[4][5];						//æ≤Ã¨…Í«Î ˝◊Èø’º‰ 
 	cout<<"«Î ‰»ÎA1æÿ’Û(4X5)£∫"<<endl;
 	init(A1);
 	cout<<"«Î ‰»ÎA2æÿ’Û(4X5)£∫"<<endl;

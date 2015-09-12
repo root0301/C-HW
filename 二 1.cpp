@@ -8,7 +8,7 @@ int main()
 	cout<<"请输入矩形的左上角和右下角坐标：";
 	cin>>x1>>y1>>x2>>y2;
 	
-	Point p1(x1, y1);
+	Point p1(x1, y1);										//调用有参数构造函数 
 	Point p2(x2, y2);
 	Rect rect(p1, p2);
 	cout<<"------矩形的面积是：";
@@ -17,6 +17,9 @@ int main()
 	return 0;
 } 
 
+/**
+ *	Point类的计算两点距离 
+ */
 int Point :: getDistance(Point p1, Point p2)
 {
 	int dis, X, Y;
@@ -25,7 +28,9 @@ int Point :: getDistance(Point p1, Point p2)
 	dis = sqrt(X + Y);
 	return dis;	
 }
-
+/**
+ *	矩形类计算矩形的面积 
+ */
 int Rect :: getArea(Rect r)
 {
 	int area, height, width;
