@@ -1,11 +1,14 @@
 #include<iostream>
 #include<fstream>
 #include<iomanip>
+/**
+ *	往文件中添加行数 
+ */
 using namespace std;
 int main()
 {
-	char name[10];
-	char content[100];
+	char name[10];													//打开的文件名 
+	char content[100];												//文件中的内容 
 	
 	ofstream outPut;
 	ifstream read;
@@ -17,7 +20,7 @@ int main()
 	outPut.open("anotherFile.txt");
 	
 	int index = 1;
-	while(read.getline(content,100))
+	while(read.getline(content,100))								//一次读取一行 
 	{
 		outPut<<index<<" : " << content<<endl;
 		index ++ ;

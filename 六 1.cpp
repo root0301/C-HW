@@ -2,7 +2,9 @@
 #include<fstream>
 #include<iomanip>
 using namespace std;
-
+/**
+ *	往文件中输入不同的数据类型 
+ */
 int main()
 {
 	ofstream outPut;
