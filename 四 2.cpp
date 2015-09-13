@@ -1,5 +1,4 @@
 #include<iostream>
-#include<stdio.h>
 using namespace std;
 /**
  *	继承与派生,shpe基类为虚类 

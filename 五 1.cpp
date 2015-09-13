@@ -1,5 +1,4 @@
 #include<iostream>
-#include<stdio.h>
 using namespace std;
 /**
  *	Point类中实现++和--运算符的重载 

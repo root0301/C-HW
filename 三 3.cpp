@@ -1,5 +1,5 @@
 #include<iostream>
-#include<stdio.h>
+
 using namespace std;
 /**
  *	定义矩阵的类 
