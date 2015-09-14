@@ -22,36 +22,31 @@ class Point
 		} 
 		
 		Point(int x, int y)	: X(x), Y(y){}								//有参数构造函数 
-		Point(Point& p)													//拷贝构造函数 
-		{
-			X = p.X;
-			Y = p.Y;
-		}
 		
-		friend Point operator++(Point& p)								//友元函数前置++重载 
+		Point& operator++()												//成员函数前置++重载 
 		{
-			p.X ++;
-			p.Y ++; 
-			return p; 
+			X++;
+			Y++; 
+			return *this; 
 		}
-		friend Point operator++(Point& p, int)							//友元函数后置++重载 
+		Point operator++(int)											//成员函数后置++重载 
 		{
-			Point point = p;
-			++p;
-			return p;
+			Point point = *this;
+			this->X++;this->Y++;
+			return point;
 		}
 
-		friend Point operator--(Point& p)								//友元函数前置--重载 
+		Point& operator--()												//成员函数前置--重载 
 		{
-			p.X --;
-			p.Y --;
-			return p; 
+			X--;
+			Y--;
+			return *this; 
 		}
-		friend Point operator--(Point& p, int)							//友元函数后置--重载 
+		Point operator--(int)											//成员函数后置--重载 
 		{
-			Point point = p;
-			--p;
-			return p;
+			Point point = *this;
+			this->X--;this->Y--;
+			return point;
 		}
 		~Point()
 		{
@@ -65,23 +60,22 @@ int main()
 	cout<<"请输入点的横坐标和纵坐标：";
 	cin>>x>>y;
 	Point point(x, y);													//调用有参数构造函数 
-	Point temp = point;													//调用拷贝构造函数 
 	
 	cout<<"该点进行前置++的结果是：";
-	temp = ++point;
-	cout<<temp.getX()<<", "<<temp.getY()<<endl;
+	++point;
+	cout<<point.getX()<<", "<<point.getY()<<endl;
 	
 	cout<<"该点进行后置++的结果是：";
-	temp = point++;
-	cout<<temp.getX()<<", "<<temp.getY()<<endl;
+	point++;
+	cout<<point.getX()<<", "<<point.getY()<<endl;
 	
 	cout<<"该点进行前置--的结果是：";
-	temp = --point;
-	cout<<temp.getX()<<", "<<temp.getY()<<endl;
+	--point;
+	cout<<point.getX()<<", "<<point.getY()<<endl;
 	
 	cout<<"该点进行后置--的结果是：";
-	temp = point--;
-	cout<<temp.getX()<<", "<<temp.getY()<<endl;
+	point--;
+	cout<<point.getX()<<", "<<point.getY()<<endl;
 	
 	return 0; 
 }

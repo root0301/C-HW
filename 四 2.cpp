@@ -6,7 +6,7 @@ using namespace std;
 class shape
 {
 	public :
-		virtual float area() = 0;											//将基类的面积函数定义成纯虚函数 
+		virtual float area() = 0;	//动态联编，在运行时确定调用的哪一个类的方法 
 		shape()
 		{
 			cout<<"shape的构造函数被调用。"<<endl;

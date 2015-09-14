@@ -6,7 +6,7 @@ using namespace std;
 class shape
 {
 	public :
-		float area(){}													//基类空的面积函数 
+		float area(){}	//静态联编，在编译时确定对象调用的特类的特定方法 
 		shape()
 		{
 			cout<<"shape的构造函数被调用。"<<endl;
