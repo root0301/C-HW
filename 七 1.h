@@ -67,6 +67,16 @@ class Contacts
 			string name, number;
 			cout<<"请输入要添加的联系人的姓名:";
 			cin>>name;
+			
+			for(int i=0; i <= INDEX; i++ )
+			{
+				if(NAME[i] == name)
+				{
+					cout<<"已存在该联系人."<<endl;
+					return;	
+				}	
+			} 
+			
 			cout<<"请输入号码:";
 			cin>>number;
 			INDEX++;
